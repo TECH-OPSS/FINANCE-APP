@@ -1,11 +1,11 @@
 from rest_framework import generics 
-from .models import budgets
-from .serializers import budgetsserializers
+from .models import Budget
+from .serializers import BudgetSerializer
 
-class budgetListCreate(generics.ListCreateAPIView):
-    queryset=budgets.objects.all()
-    serializer_class=budgetsserializers
+class BudgetListCreate(generics.ListCreateAPIView):
+    queryset=Budget.objects.all()
+    serializer_class=BudgetSerializer
     
-class budgetsDetail(generics.RetrieveUpdatesDestroyAPIView):
-    queryset=budgets.objects.all()
-    serializer_class=budgetsserializers
+class BudgetDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset=Budget.objects.all()
+    serializer_class=BudgetSerializer

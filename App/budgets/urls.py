@@ -1,8 +1,8 @@
 from django.urls import path 
-from .views import budgetsListCreate, budgetsDetail
+from .views import BudgetListCreate, BudgetDetail
 
 
-urlspatterns=[
-    path('', budgetsListCreate.as_view(), name='budget-list-create'),
-    path('<int:pk>/', budgetsDetail.as_view(), name='budget-detail'),
+urlpatterns=[
+    path('', BudgetListCreate.as_view(), name='budget-list-create'),
+    path('<int:pk>/', BudgetDetail.as_view(), name='budget-detail'),
 ]

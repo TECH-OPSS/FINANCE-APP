@@ -1,11 +1,11 @@
 from rest_framework import generics
-from .models import educationContent
+from .models import EducationContent
 from .serializers import educationContentserializer
 
 class educationContentListCreate(generics.ListCreateAPIView):
-    queryset=educationContent.objects.all()
+    queryset=EducationContent.objects.all()
     serializer_class=educationContentserializer
     
 class educationContentDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset=educationContent.objects.all()
+    queryset=EducationContent.objects.all()
     serializer_class=educationContentserializer

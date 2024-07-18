@@ -1,11 +1,11 @@
-from rest_framework import generics 
-from .models import expenses
-from .Serializers import expensesSerializers
+from rest_framework import generics
+from .models import Expense
+from .Serializers import ExpenseSerializer
 
-class expensesListCreate(generics.ListCreateAPIView):
-    queryset = expenses.objects.all()
-    serializer_class = expensesSerializers
-    
-class expensesDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = expenses.objects.all()
-    Serializers_class = expensesSerializers
+class ExpenseListCreate(generics.ListCreateAPIView):
+    queryset = Expense.objects.all()
+    serializer_class = ExpenseSerializer
+
+class ExpenseDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Expense.objects.all()
+    serializer_class = ExpenseSerializer
